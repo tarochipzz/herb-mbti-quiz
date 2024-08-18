@@ -149,7 +149,7 @@ export const Result: React.FC = () => {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          width: { xs: "100%", sm: "60%", md: "50%" , lg: "30%", xlg: "20%"},
+          width: { xs: "100%", sm: "60%", md: "50%", lg: "30%", xlg: "20%" },
         }}
       >
         <CardMedia
@@ -230,7 +230,7 @@ export const Result: React.FC = () => {
       <ShareModal
         open={shareModalOpen}
         onClose={() => setShareModalOpen(false)}
-        shareUrl={`${window.location.origin}`}
+        shareUrl={`${window.location.origin}/herb-mbti-quiz`}
       />
     </>
   );

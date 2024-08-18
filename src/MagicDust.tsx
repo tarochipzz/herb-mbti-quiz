@@ -19,7 +19,7 @@ const magicalColors = [
   "#ebcafe", // light purple
   "#9400D3", // dark Violet
   "#f4f1de", // beige
-  "##91bd75", // green
+  "#91bd75", // green
 ];
 
 export const MagicDust: React.FC = () => {

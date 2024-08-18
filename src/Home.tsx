@@ -2,6 +2,7 @@ import { Button, Card, CardMedia, Typography } from "@mui/material";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import fleurs from "./assets/fleurs.png";
+import { ROOT } from "./App";
 
 const ArrowForward = (
   <svg
@@ -56,7 +57,7 @@ export const Home: React.FC = () => {
         endIcon={ArrowForward}
         variant="outlined"
         color="primary"
-        onClick={() => navigate("/quiz")}
+        onClick={() => navigate(`/${ROOT}/questions`)}
       >
         Start Adventure
       </Button>

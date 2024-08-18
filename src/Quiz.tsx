@@ -30,6 +30,7 @@ import q9 from "./assets/questionImages/9.png";
 import q10 from "./assets/questionImages/10.png";
 import q11 from "./assets/questionImages/11.png";
 import q12 from "./assets/questionImages/12.png";
+import { ROOT } from "./App";
 
 const images: Record<number, string> = {
   1: q1,
@@ -107,7 +108,7 @@ export const Quiz: React.FC = () => {
     if (currentQuestion < questionMaps.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
     } else {
-      navigate("/result");
+      navigate(`/${ROOT}/result`);
     }
   };
 

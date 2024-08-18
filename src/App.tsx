@@ -13,6 +13,7 @@ import {
 } from "@mui/material";
 import { MagicDust } from "./MagicDust";
 
+export const ROOT = "herb-mbti-quiz";
 const theme = responsiveFontSizes(
   createTheme({
     palette: {
@@ -47,9 +48,9 @@ const App: React.FC = () => {
           <MagicDust />
           <Router>
             <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/quiz" element={<Quiz />} />
-              <Route path="/result" element={<Result />} />
+              <Route path={`/${ROOT}`} element={<Home />} />
+              <Route path={`/${ROOT}/questions`} element={<Quiz />} />
+              <Route path={`/${ROOT}/result`} element={<Result />} />
             </Routes>
           </Router>
         </Box>

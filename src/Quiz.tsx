@@ -71,9 +71,9 @@ const QuestionTypography = styled(Typography)(({ theme }) => ({
   },
 }));
 
-const NavigationButton = styled(Button)(({ theme }) => ({
+const NavigationButton = styled(Button)({
   color: "#4a4a4a",
-}));
+});
 
 const AnswerButton = styled(Button)<{ selected?: boolean }>(
   ({ theme, selected }) => ({

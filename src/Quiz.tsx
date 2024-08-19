@@ -7,6 +7,7 @@ import {
   Button,
   Card,
   CardMedia,
+  LinearProgress,
   Typography,
   styled,
 } from "@mui/material";
@@ -58,15 +59,15 @@ const StyledCard = styled(Card)(({ theme }) => ({
   alignItems: "center",
   background: CARD_BACKGROUND,
   minHeight: "100vh",
-  padding: "40px 20px",
+  padding: "20px 20px",
   overflow: "auto",
   width: "100%",
   [theme.breakpoints.up("sm")]: {
     width: "80%",
+    padding: "40px 45px",
   },
   [theme.breakpoints.up("md")]: {
     width: "70%",
-    padding: "40px 45px",
   },
 }));
 
@@ -85,16 +86,28 @@ const NavigationButton = styled(Button)({
 const AnswerButton = styled(Button)<{ selected?: boolean }>(
   ({ theme, selected }) => ({
     width: "100%",
-    textTransform: "none",
-    justifyContent: "flex-start",
     textAlign: "left",
     padding: "8px 16px",
     marginBottom: theme.spacing(2),
+    fontSize: "18px",
+    textTransform: "none",
+    justifyContent: "flex-start",
     backgroundColor: selected ? ANSWER_SELECTED : ANSWER_BACKGROUND,
     color: selected ? CARD_BACKGROUND : TEXT,
     borderRadius: "18px",
-    "&:hover": {
-      backgroundColor: selected ? ANSWER_SELECTED : ANSWER_HOVER,
+    [theme.breakpoints.down("sm")]: {
+      "&:hover": {
+        backgroundColor: ANSWER_BACKGROUND,
+        color: TEXT,
+      },
+    },
+    [theme.breakpoints.up("md")]: {
+      "&:hover": {
+        backgroundColor: selected ? ANSWER_SELECTED : ANSWER_HOVER,
+      },
+    },
+    [theme.breakpoints.down("lg")]: {
+      fontSize: "0.9rem",
     },
   })
 );
@@ -125,6 +138,12 @@ export const Quiz: React.FC = () => {
         width: { xs: "100%", sm: "80%", md: "70%", lg: "60%" },
       }}
     >
+      <LinearProgress
+        color="success"
+        variant="determinate"
+        value={(currentQuestion / 12) * 100}
+        sx={{ width: "90%", padding: "3px", marginBottom: "10px" }}
+      />
       <QuestionTypography variant="h5">{question.question}</QuestionTypography>
       <CardMedia
         component="img"

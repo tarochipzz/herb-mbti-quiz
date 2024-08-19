@@ -52,7 +52,7 @@ export const questionMaps = [
         a: "Catalog each plant and its potential uses before taking further action",
       },
       {
-        b: "Start tasting and experimenting with different plant combinations right away",
+        b: "Start tasting and experimenting with different plant combinations",
       },
       {
         c: "Seek out other herbalists to share and expand this knowledge collectively",
@@ -84,7 +84,7 @@ export const questionMaps = [
   {
     id: 5,
     question:
-      "You encounter a villager afflicted by a mysterious illness. How do you approach healing them?",
+      "Upon clearning the vapor, you notice a villager afflicted by its poison. How do you approach healing them?",
     answers: [
       {
         a: "Research similar symptoms and their herbal remedies",
@@ -103,7 +103,7 @@ export const questionMaps = [
   {
     id: 6,
     question:
-      "In gratitude for helping the villager, you're gifted a rare, magical herb with unknown properties. What do you do with it?",
+      "In gratitude for helping the villager, you're gifted a rare magical herb with unknown properties. What do you do with it?",
     answers: [
       { a: "Carefully study its properties through controlled experiments" },
       {
@@ -148,7 +148,7 @@ export const questionMaps = [
   {
     id: 9,
     question:
-      "You're invited to a gathering of witches to showcase your herbal expertise in competition. How do you prepare?",
+      "You're invited to a gathering of witches to showcase your new herbal expertise in competition. How do you prepare?",
     answers: [
       {
         a: "Research the specialties of other attendees to understand the competition",
@@ -199,7 +199,7 @@ export const questionMaps = [
   {
     id: 12,
     question:
-      "The prophecy reveals it is you who will bring a new era of herbal wisdom, how do you choose to share your knowledge with the world?",
+      "The prophecy reveals it is you who will bring a new era of herbal wisdom, how do share your knowledge with the world?",
     answers: [
       {
         a: "Write a comprehensive spellbook, detailing your research and discoveries",
@@ -500,4 +500,3 @@ export const mbtiHerbMap = {
     leastCompatible: ["ENFP", "INFP"],
   },
 };
-

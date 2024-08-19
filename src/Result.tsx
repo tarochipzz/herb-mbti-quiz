@@ -141,7 +141,13 @@ export const Result: React.FC = () => {
   };
 
   return (
-    <>
+    <Box
+      display="flex"
+      flexDirection="column"
+      justifyContent="center"
+      alignItems="center"
+      padding="15px"
+    >
       <Card
         elevation={0}
         variant="outlined"
@@ -226,12 +232,12 @@ export const Result: React.FC = () => {
             Share
           </Button>
         </Box>
+        <ShareModal
+          open={shareModalOpen}
+          onClose={() => setShareModalOpen(false)}
+          shareUrl={`${window.location.origin}/herb-mbti-quiz`}
+        />
       </Box>
-      <ShareModal
-        open={shareModalOpen}
-        onClose={() => setShareModalOpen(false)}
-        shareUrl={`${window.location.origin}/herb-mbti-quiz`}
-      />
-    </>
+    </Box>
   );
 };

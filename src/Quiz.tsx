@@ -47,7 +47,7 @@ const ArrowForward = (
     height="24px"
     viewBox="0 -960 960 960"
     width="24px"
-    fill="#5f6368"
+    fill={TEXT}
   >
     <path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z" />
   </svg>
@@ -59,7 +59,7 @@ const ArrowBack = (
     height="24"
     viewBox="0 -960 960 960"
     width="24"
-    fill="#5f6368"
+    fill={TEXT}
   >
     <path d="M313-440l224 224-57 56-320-320 320-320 57 56-224 224h487v80H313z" />
   </svg>
@@ -104,10 +104,6 @@ const QuestionTypography = styled(Typography)(({ theme }) => ({
     fontSize: "1rem",
   },
 }));
-
-const NavigationButton = styled(Button)({
-  color: TEXT,
-});
 
 const AnswerButton = styled(Button)<{ selected?: boolean }>(
   ({ theme, selected }) => ({

@@ -32,6 +32,12 @@ import q11 from "./assets/questionImages/11.png";
 import q12 from "./assets/questionImages/12.png";
 import { ROOT } from "./App";
 
+const ANSWER_SELECTED = "#7a540d";
+const ANSWER_HOVER = "#d3c6ad";
+const ANSWER_BACKGROUND = "#f2e5cc";
+const TEXT = "#4a4a4a";
+const CARD_BACKGROUND = "#fef7ea";
+
 const images: Record<number, string> = {
   1: q1,
   2: q2,
@@ -50,7 +56,7 @@ const StyledCard = styled(Card)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
-  background: "#fef7ea",
+  background: CARD_BACKGROUND,
   minHeight: "100vh",
   padding: "40px 20px",
   overflow: "auto",
@@ -65,7 +71,7 @@ const StyledCard = styled(Card)(({ theme }) => ({
 }));
 
 const QuestionTypography = styled(Typography)(({ theme }) => ({
-  color: "#4a4a4a",
+  color: TEXT,
   textAlign: "center",
   [theme.breakpoints.down("lg")]: {
     fontSize: "1rem",
@@ -73,7 +79,7 @@ const QuestionTypography = styled(Typography)(({ theme }) => ({
 }));
 
 const NavigationButton = styled(Button)({
-  color: "#4a4a4a",
+  color: TEXT,
 });
 
 const AnswerButton = styled(Button)<{ selected?: boolean }>(
@@ -84,12 +90,11 @@ const AnswerButton = styled(Button)<{ selected?: boolean }>(
     textAlign: "left",
     padding: "8px 16px",
     marginBottom: theme.spacing(2),
-    backgroundColor: selected ? "#8b4513" : "#f2e5cc",
-    color: selected ? "#fef7ea" : "#4a4a4a",
+    backgroundColor: selected ? ANSWER_SELECTED : ANSWER_BACKGROUND,
+    color: selected ? CARD_BACKGROUND : TEXT,
     borderRadius: "18px",
     "&:hover": {
-      backgroundColor: "#8b4513",
-      color: "#fef7ea",
+      backgroundColor: selected ? ANSWER_SELECTED : ANSWER_HOVER,
     },
   })
 );
@@ -164,16 +169,18 @@ export const Quiz: React.FC = () => {
         >
           Previous
         </NavigationButton>
-        <NavigationButton
-          variant="text"
-          onClick={() =>
-            currentQuestion < questionMaps.length - 1
-              ? setCurrentQuestion((prev) => prev + 1)
-              : navigate("/result")
-          }
-        >
-          {currentQuestion < questionMaps.length - 1 ? "Next" : "See Results"}
-        </NavigationButton>
+        {answers[currentQuestion] && (
+          <NavigationButton
+            variant="text"
+            onClick={() =>
+              currentQuestion < questionMaps.length - 1
+                ? setCurrentQuestion((prev) => prev + 1)
+                : navigate("/result")
+            }
+          >
+            {currentQuestion < questionMaps.length - 1 ? "Next" : "See Results"}
+          </NavigationButton>
+        )}
       </Box>
     </StyledCard>
   );

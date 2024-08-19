@@ -116,7 +116,6 @@ export const Quiz: React.FC = () => {
 
   return (
     <StyledCard
-      elevation={0}
       sx={{
         width: { xs: "100%", sm: "80%", md: "70%", lg: "60%" },
       }}

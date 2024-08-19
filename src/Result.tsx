@@ -148,6 +148,28 @@ export const Result: React.FC = () => {
       alignItems="center"
       padding="15px"
     >
+      <Typography sx={{ textAlign: "center" }}>
+        <Button
+          sx={{
+            color: "black",
+            textDecoration: "underline",
+            "&:hover": {
+              backgroundColor: "#c3cebb",
+              color: "#626a45",
+              textDecoration: "underline",
+            },
+            padding: 0,
+          }}
+          variant="text"
+          onClick={() =>
+            window.open("https://www.instagram.com/potion.petal", "_blank")
+          }
+        >
+          Follow us on Instagram
+        </Button>
+        {isSmallScreen ? <br /> : " "}
+        to learn more about herbs and magical botanicals ❤️
+      </Typography>
       <Card
         elevation={0}
         variant="outlined"
@@ -155,7 +177,7 @@ export const Result: React.FC = () => {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          width: { xs: "100%", sm: "60%", md: "50%", lg: "30%", xlg: "20%" },
+          width: { xs: "100%", md: "55%", lg: "35%", xlg: "25%" },
         }}
       >
         <CardMedia
@@ -164,80 +186,47 @@ export const Result: React.FC = () => {
           alt={`${MBTI} herb: ${herbResult}`}
         />
       </Card>
+
       <Box
         sx={{
           display: "flex",
-          flexDirection: "column",
           justifyContent: "center",
           alignContent: "center",
-          gap: 2,
-          mb: 2,
-          padding: "10px",
+          textDecoration: "underline",
         }}
       >
-        <Typography sx={{ textAlign: "center" }}>
-          <Button
-            sx={{
-              color: "black",
-              textDecoration: "underline",
-              "&:hover": {
-                backgroundColor: "#c3cebb",
-                color: "#626a45",
-                textDecoration: "underline",
-              },
-              padding: 0,
-            }}
-            variant="text"
-            onClick={() =>
-              window.open("https://www.instagram.com/potion.petal", "_blank")
-            }
-          >
-            Follow us on Instagram
-          </Button>
-          {isSmallScreen ? <br /> : " "}
-          to learn more about herbs and magical botanicals...
-        </Typography>
-        <Box
+        <Button
           sx={{
-            display: "flex",
-            justifyContent: "center",
-            alignContent: "center",
-            textDecoration: "underline",
+            color: "black",
+            "&:hover": {
+              backgroundColor: "#c3cebb",
+              color: "#626a45",
+            },
           }}
+          variant="text"
+          onClick={() => handleDownload(images[MBTI])}
         >
-          <Button
-            sx={{
-              color: "black",
-              "&:hover": {
-                backgroundColor: "#c3cebb",
-                color: "#626a45",
-              },
-            }}
-            variant="text"
-            onClick={() => handleDownload(images[MBTI])}
-          >
-            Download
-          </Button>
-          <Button
-            sx={{
-              color: "black",
-              "&:hover": {
-                backgroundColor: "#c3cebb",
-                color: "#626a45",
-              },
-            }}
-            variant="text"
-            onClick={handleShare}
-          >
-            Share
-          </Button>
-        </Box>
-        <ShareModal
-          open={shareModalOpen}
-          onClose={() => setShareModalOpen(false)}
-          shareUrl={`${window.location.origin}/herb-mbti-quiz`}
-        />
+          Download
+        </Button>
+        <Button
+          sx={{
+            color: "black",
+            "&:hover": {
+              backgroundColor: "#c3cebb",
+              color: "#626a45",
+            },
+          }}
+          variant="text"
+          onClick={handleShare}
+        >
+          Share
+        </Button>
       </Box>
+      <ShareModal
+        open={shareModalOpen}
+        onClose={() => setShareModalOpen(false)}
+        shareUrl={`${window.location.origin}/herb-mbti-quiz`}
+      />
     </Box>
   );
 };

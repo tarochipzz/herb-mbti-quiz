@@ -7,6 +7,7 @@ import {
   Button,
   Card,
   CardMedia,
+  IconButton,
   LinearProgress,
   Typography,
   styled,
@@ -31,6 +32,7 @@ import q9 from "./assets/questionImages/9.png";
 import q10 from "./assets/questionImages/10.png";
 import q11 from "./assets/questionImages/11.png";
 import q12 from "./assets/questionImages/12.png";
+import logo from "./assets/potionPetalLogoOnly.png";
 import { ROOT } from "./App";
 
 const ANSWER_SELECTED = "#7a540d";
@@ -38,6 +40,30 @@ const ANSWER_HOVER = "#d3c6ad";
 const ANSWER_BACKGROUND = "#f2e5cc";
 const TEXT = "#4a4a4a";
 const CARD_BACKGROUND = "#fef7ea";
+
+const ArrowForward = (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    height="24px"
+    viewBox="0 -960 960 960"
+    width="24px"
+    fill="#5f6368"
+  >
+    <path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z" />
+  </svg>
+);
+
+const ArrowBack = (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    height="24"
+    viewBox="0 -960 960 960"
+    width="24"
+    fill="#5f6368"
+  >
+    <path d="M313-440l224 224-57 56-320-320 320-320 57 56-224 224h487v80H313z" />
+  </svg>
+);
 
 const images: Record<number, string> = {
   1: q1,
@@ -155,6 +181,32 @@ export const Quiz: React.FC = () => {
       />
       <Box
         sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          width: "100%",
+        }}
+      >
+        {currentQuestion !== 0 ? (
+          <IconButton onClick={() => setCurrentQuestion((prev) => prev - 1)}>
+            {ArrowBack}
+          </IconButton>
+        ) : (
+          <IconButton />
+        )}
+        {answers[currentQuestion] && (
+          <IconButton
+            onClick={() =>
+              currentQuestion < questionMaps.length - 1
+                ? setCurrentQuestion((prev) => prev + 1)
+                : navigate("/result")
+            }
+          >
+            {ArrowForward}
+          </IconButton>
+        )}
+      </Box>
+      <Box
+        sx={{
           width: { xs: "100%", sm: "90%", md: "70%" },
         }}
       >
@@ -173,34 +225,32 @@ export const Quiz: React.FC = () => {
           );
         })}
       </Box>
-      <Box
-        sx={{
-          display: "flex",
-          justifyContent: "space-between",
-          width: "100%",
-          mt: 2,
-        }}
-      >
-        <NavigationButton
+      <Typography sx={{ textAlign: "center" }}>
+        <Button
+          sx={{
+            color: TEXT,
+            textTransform: "none",
+            textDecoration: "underline",
+            padding: 0,
+          }}
           variant="text"
-          disabled={currentQuestion === 0}
-          onClick={() => setCurrentQuestion((prev) => prev - 1)}
+          onClick={() =>
+            window.open("https://www.instagram.com/potion.petal", "_blank")
+          }
         >
-          Previous
-        </NavigationButton>
-        {answers[currentQuestion] && (
-          <NavigationButton
-            variant="text"
-            onClick={() =>
-              currentQuestion < questionMaps.length - 1
-                ? setCurrentQuestion((prev) => prev + 1)
-                : navigate("/result")
-            }
-          >
-            {currentQuestion < questionMaps.length - 1 ? "Next" : "See Results"}
-          </NavigationButton>
-        )}
-      </Box>
+          <Box
+            sx={{
+              height: 32,
+              width: 32,
+              color: TEXT,
+              backgroundImage: `url(${logo})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          />
+          @potion.petal
+        </Button>
+      </Typography>
     </StyledCard>
   );
 };

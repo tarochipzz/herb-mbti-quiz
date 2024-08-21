@@ -18,7 +18,7 @@ import {
   CurrentQuestionState,
   QuestionAnswersState,
 } from "./state/quizState";
-import { questionMaps } from "./questions";
+import { advancedQuestionMaps } from "./questions";
 
 import q1 from "./assets/questionImages/1.png";
 import q2 from "./assets/questionImages/2.png";
@@ -145,14 +145,14 @@ export const Quiz: React.FC = () => {
       ...answers,
       [currentQuestion]: answer,
     });
-    if (currentQuestion < questionMaps.length - 1) {
+    if (currentQuestion < advancedQuestionMaps.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
     } else {
       navigate(`/${ROOT}/result`);
     }
   };
 
-  const question = questionMaps[currentQuestion];
+  const question = advancedQuestionMaps[currentQuestion];
 
   return (
     <StyledCard
@@ -192,7 +192,7 @@ export const Quiz: React.FC = () => {
         {answers[currentQuestion] && (
           <IconButton
             onClick={() =>
-              currentQuestion < questionMaps.length - 1
+              currentQuestion < advancedQuestionMaps.length - 1
                 ? setCurrentQuestion((prev) => prev + 1)
                 : navigate("/result")
             }

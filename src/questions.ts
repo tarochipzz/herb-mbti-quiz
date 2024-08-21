@@ -254,8 +254,8 @@ export const mbtiHerbMap = {
     description:
       "Color-changing, visually stunning, and mentally clarifying, symbolizes creativity and the ability to see possibilities others might miss.",
     image: "./placeholder.jpg",
-    strength: ["Creativey", "Enthusiastic", "Adaptable"],
-    weakness: ["Easily distracted", "Overthinks"],
+    strength: ["Creativey", "Enthusiastic", "Caring"],
+    weakness: ["Idealistic", "Indecisive", "Distracted"],
     benefits: [
       "Enhances brain function",
       "Reduces stress and anxiety",
@@ -366,8 +366,12 @@ export const mbtiHerbMap = {
     description:
       "Enhances mental clarity and focus, representing those who excel in analytical and abstract thinking.",
     image: "./placeholder.jpg",
-    strength: ["Analytical precision", "Innovative thinker", "Unbiased"],
-    weakness: ["Difficulty with emotional expression", "Misses small details"],
+    strength: ["Analytical precision", "Curious thinker", "Unbiased"],
+    weakness: [
+      "Difficulty with emotional expression",
+      "Misses small details",
+      "indecisive",
+    ],
     benefits: [
       "Enhances cognitive function",
       "Improves blood circulation",
@@ -383,7 +387,11 @@ export const mbtiHerbMap = {
       "Bright, healing, and sociable, mirroring the warm and supportive natured",
     image: "./placeholder.jpg",
     strength: ["Social butterfly", "Helpful", "Loyal"],
-    weakness: ["Oversensitivity to criticism", "Tendency to neglect own needs"],
+    weakness: [
+      "Oversensitivity to criticism",
+      "Tendency to neglect own needs",
+      "stubborn",
+    ],
     benefits: [
       "Promotes skin healing",
       "Reduces inflammation",
@@ -398,7 +406,7 @@ export const mbtiHerbMap = {
     description:
       "Adaptogenic and stamina-boosting, mirroring those with resilience, drive, and ability to lead under pressure.",
     image: "./placeholder.jpg",
-    strength: ["Leadership", "Strategic planning", "Decisiveness"],
+    strength: ["Leadership", "Strategic planning", "Ambitious"],
     weakness: ["Tendency to be overly blunt", "Difficulty relaxing"],
     benefits: [
       "Increases energy and stamina",
@@ -414,10 +422,10 @@ export const mbtiHerbMap = {
     description:
       "Dreamy, introspective, and calming, embodying the idealistic and empathetic.",
     image: "./placeholder.jpg",
-    strength: ["Creative", "Empathetic", "Idealistic"],
+    strength: ["Creative", "Authentic", "Compassionate"],
     weakness: ["Impracticality", "Tendency to avoid conflict"],
     benefits: [
-      "Reduces anxiety and stress and hysteria",
+      "Reduces anxiety, stress and hysteria",
       "Improves sleep quality",
       "Relieves pain",
     ],
@@ -446,8 +454,8 @@ export const mbtiHerbMap = {
     description:
       "warm and comforting aroma, reflecting the welcoming and supportive",
     image: "./placeholder.jpg",
-    strength: ["Charisma", "Empathy", "Leadership"],
-    weakness: ["Tendency to overextend", "Sensitive to criticism"],
+    strength: ["Inspiring", "Empathy", "Goal-Oriented"],
+    weakness: ["Tendency to overextend", "Sensitive to criticism", "overly idealistic"],
     benefits: [
       "Regulates blood sugar",
       "Reduces inflammation",
@@ -462,12 +470,8 @@ export const mbtiHerbMap = {
     description:
       "Vibrant, fun, and attention-grabbing, reflecting the spontaneous and entertaining.",
     image: "./placeholder.jpg",
-    strength: [
-      "Energetic enthusiasm",
-      "Charismatic",
-      "Easily connects with others",
-    ],
-    weakness: ["Difficulty with long-term planning", "Easily distracted"],
+    strength: ["Energetic enthusiasm", "Charismatic", "Empathetic"],
+    weakness: ["Impulsive", "Avoidant", "Easily distracted"],
     benefits: [
       "Lowers blood pressure",
       "Rich in antioxidants",
@@ -484,11 +488,11 @@ export const mbtiHerbMap = {
     image: "./placeholder.jpg",
     strength: [
       "Reliable",
-      "Practical organization",
-      "Pays attention to detail",
+      "logical",
+      "Detail oriented",
     ],
     weakness: [
-      "Difficulty with abstract concepts",
+      "Unapprochable",
       "Tendency to judge quickly",
     ],
     benefits: [

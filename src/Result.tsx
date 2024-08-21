@@ -14,22 +14,22 @@ import {
 import { AnswerKeys, QuestionAnswersState } from "./state/quizState";
 import { MBTI, mbtiHerbMap } from "./questions";
 
-import cinnamon from "./assets/resultImages/ENFJ.png";
-import butterfly from "./assets/resultImages/ENFP.png";
-import ginseng from "./assets/resultImages/ENTJ.png";
-import sage from "./assets/resultImages/ENTP.png";
-import calendula from "./assets/resultImages/ESFJ.png";
-import hibiscus from "./assets/resultImages/ESFP.png";
-import echinacea from "./assets/resultImages/ESTJ.png";
-import guarana from "./assets/resultImages/ESTP.png";
-import lavender from "./assets/resultImages/INFJ.png";
-import passionflower from "./assets/resultImages/INFP.png";
-import rosemary from "./assets/resultImages/INTJ.png";
-import chamomile from "./assets/resultImages/ISFJ.png";
-import gingko from "./assets/resultImages/INTP.png";
-import jasmine from "./assets/resultImages/ISFP.png";
-import thyme from "./assets/resultImages/ISTJ.png";
-import juniper from "./assets/resultImages/ISTP.png";
+import cinnamon from "./assets/resultImages/cinnamon.png";
+import butterfly from "./assets/resultImages/butterfly.png";
+import ginseng from "./assets/resultImages/ginseng.png";
+import sage from "./assets/resultImages/sage.png";
+import calendula from "./assets/resultImages/calendula.png";
+import hibiscus from "./assets/resultImages/hibiscus.png";
+import echinacea from "./assets/resultImages/echinacea.png";
+import guarana from "./assets/resultImages/guarana.png";
+import lavender from "./assets/resultImages/lavender.png";
+import passionflower from "./assets/resultImages/passionflower.png";
+import rosemary from "./assets/resultImages/rosemary.png";
+import chamomile from "./assets/resultImages/chamomile.png";
+import gingko from "./assets/resultImages/gingko.png";
+import jasmine from "./assets/resultImages/jasmine.png";
+import thyme from "./assets/resultImages/thyme.png";
+import juniper from "./assets/resultImages/juniper.png";
 import { ShareModal } from "./ShareModal";
 
 const images = {
